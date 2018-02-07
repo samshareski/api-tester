@@ -18,7 +18,7 @@ class Form extends Component {
   }
 
   handleSubmit = event => {
-    alert(JSON.stringify(this.state))
+    this.props.submitFormData(this.state)
     event.preventDefault()
   }
 

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import Form from './console/Form'
+import Console from './console/Console'
 
 class App extends Component {
   render() {
-    return <Form />
+    return <Console />
   }
 }
 
