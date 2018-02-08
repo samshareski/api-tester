@@ -6,7 +6,8 @@ class Form extends Component {
     super(props)
     this.state = {
       method: 'GET',
-      url: ''
+      url: '',
+      body: ''
     }
   }
 
@@ -16,6 +17,10 @@ class Form extends Component {
 
   handleUrlChange = event => {
     this.setState({ url: event.target.value })
+  }
+
+  handleBodyChange = event => {
+    this.setState({ body: event.target.value })
   }
 
   handleSubmit = event => {
@@ -43,6 +48,16 @@ class Form extends Component {
           value={this.state.url}
           onChange={this.handleUrlChange}
         />
+        {(this.state.method === 'POST' || this.state.method === 'PUT') && (
+          <textarea
+            name="body"
+            rows="5"
+            cols="30"
+            placeholder={'{\n  "id": 1\n}'}
+            value={this.state.body}
+            onChange={this.handleBodyChange}
+          />
+        )}
         <input type="submit" value="TEST" />
       </form>
     )

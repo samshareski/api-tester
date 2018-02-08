@@ -12,7 +12,7 @@ class Console extends Component {
   }
 
   testApi = formData => {
-    makeApiRequest(formData.method, formData.url).then(response => {
+    makeApiRequest(formData).then(response => {
       this.setState({ response: response })
     })
   }
