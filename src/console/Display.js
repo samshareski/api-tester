@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Display = ({ response }) => (
-  <p>{response !== null ? response : 'Press TEST to test API'}</p>
+  <pre>{response !== null ? response : 'Press TEST to test API'}</pre>
 )
 
 export default Display
