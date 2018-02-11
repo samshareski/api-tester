@@ -1,5 +1,5 @@
-import {store} from './store'
-import { addResponse } from './actions'
+import { store } from '../store/store'
+import { addResponse } from '../store/actions'
 
 const makeApiRequest = async formData => {
   let init = {
@@ -20,14 +20,13 @@ const makeApiRequest = async formData => {
   const json = await response.json()
 
   store.dispatch(
-    addResponse(
-      {
-        url: formData.url, 
-        method: formData.method, 
-        body: formData.body, 
-        response: json
-      })
-    )
+    addResponse({
+      url: formData.url,
+      method: formData.method,
+      body: formData.body,
+      response: json
+    })
+  )
 
   return {
     ok: response.ok,
