@@ -17,18 +17,16 @@ class History extends Component {
       <li onClick={() => this.toggleDetails()}>
         <h3>{this.props.history.method}</h3>
         <h3>{this.props.history.url}</h3>
-        {this.state.showDetails && (
-          <pre>
+        {this.state.showDetails && [
+          <pre key="response">
             <strong>Response:</strong>
             {this.props.history.response}
-          </pre>
-        )}
-        {this.state.showDetails && (
-          <pre>
+          </pre>,
+          <pre key="request">
             <strong>Request Body:</strong>
             {this.props.history.body}
           </pre>
-        )}
+        ]}
       </li>
     )
   }
