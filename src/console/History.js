@@ -12,8 +12,8 @@ class History extends Component {
 
     viewResponse = () => {
         this.setState({
-            body: JSON.stringify(this.props.response.body),
-            response: JSON.stringify(this.props.response)
+            body: JSON.stringify(this.props.history.body),
+            response: JSON.stringify(this.props.history.response)
         })
     }
 
@@ -21,8 +21,8 @@ class History extends Component {
         return (
             <li
                 onClick={() => this.viewResponse()}>
-                {this.props.method}
-                {this.props.url}
+                {this.props.history.method}
+                {this.props.history.url}
                 {this.state.body}
                 {this.state.response}
             </li>

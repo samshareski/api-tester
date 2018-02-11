@@ -7,8 +7,7 @@ class HistoryList extends Component {
         return (
         <ul>
             {this.props.historyList.map((history, index) => (
-            <History key={index} method={history.response.method} 
-            url={history.response.url}  body={history.response.body} response={history.response.response}/>
+            <History key={index} history={history.response} />
             ))}
         </ul>
         )
