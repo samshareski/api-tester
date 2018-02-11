@@ -3,7 +3,12 @@ import Console from './console/Console'
 
 class App extends Component {
   render() {
-    return <Console />
+    return (
+      <div>
+        <h1>React API Tester</h1>
+        <Console />
+      </div>
+    )
   }
 }
 

@@ -16,10 +16,12 @@ class Console extends Component {
   }
 
   render() {
-    return [
-      <Display response={this.state.response} />,
-      <Form submitFormData={this.testApi} />
-    ]
+    return (
+      <div>
+        <Display response={this.state.response} />
+        <Form submitFormData={this.testApi} />
+      </div>
+    )
   }
 }
 
