@@ -4,7 +4,6 @@ const initialState = {
 }
 
 const responseCounter = (state = initialState, action) => {
-  console.log(action)
   switch (action.type) {
     case 'ADD_RESPONSE':
       const successCount = action.response.ok
