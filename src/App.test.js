@@ -4,13 +4,13 @@ import { shallow } from 'enzyme'
 import App from './App'
 
 describe ('<App />', () => {
-  it('renders without crashing', () => {
+  it.skip('renders without crashing', () => {
     const div = document.createElement('div')
     ReactDOM.render(<App />, div)
     ReactDOM.unmountComponentAtNode(div)
   })
 
-  it.skip('renders without crashing', () => {
+  it('renders without crashing', () => {
     const app = shallow(<App />)
     expect(app.find('h1').text()).toEqual('React API Tester')
   })
