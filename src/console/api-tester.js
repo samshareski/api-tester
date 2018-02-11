@@ -29,16 +29,6 @@ const makeApiRequest = async formData => {
     })
   )
 
-  store.dispatch(
-    addResponse(
-      {
-        url: formData.url,
-        method: formData.method,
-        body: formData.body,
-        response: json
-      })
-    )
-
   return {
     ok: response.ok,
     json: jsonString
