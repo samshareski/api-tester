@@ -18,19 +18,20 @@ const makeApiRequest = async formData => {
 
   const response = await fetch(formData.url, init)
   const json = await response.json()
+  const jsonString = JSON.stringify(json, null, 2)
 
   store.dispatch(
     addResponse({
       url: formData.url,
       method: formData.method,
       body: formData.body,
-      response: json
+      response: jsonString
     })
   )
 
   return {
     ok: response.ok,
-    json: JSON.stringify(json, null, 2)
+    json: jsonString
   }
 }
 
