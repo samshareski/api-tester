@@ -1,6 +1,10 @@
+import { store } from '../store/store'
+import { addResponse } from '../store/actions'
+
 const makeApiRequest = async formData => {
   let init = {
-    method: formData.method
+    method: formData.method,
+    mode: 'cors'
   }
   if (formData.method === 'POST' || formData.method === 'PUT') {
     init = {
@@ -14,10 +18,20 @@ const makeApiRequest = async formData => {
 
   const response = await fetch(formData.url, init)
   const json = await response.json()
+  const jsonString = JSON.stringify(json, null, 2)
+
+  store.dispatch(
+    addResponse({
+      url: formData.url,
+      method: formData.method,
+      body: formData.body,
+      response: jsonString
+    })
+  )
 
   return {
     ok: response.ok,
-    json: JSON.stringify(json, null, 2)
+    json: jsonString
   }
 }
 
