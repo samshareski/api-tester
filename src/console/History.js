@@ -12,7 +12,7 @@ class History extends Component {
 
     viewResponse = id => {
         this.setState({
-            body: this.props.historyList[id].response.body,
+            body: JSON.stringify(this.props.historyList[id].response.body),
             response: JSON.stringify(this.props.historyList[id].response.response)
         })
     }
