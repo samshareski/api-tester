@@ -1,13 +1,51 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Chart from 'chart.js'
 import { resetSuccessRate } from '../store/actions'
 
-const ResponseCounter = ({ responseCounter, reset }) => (
-  <div>
-    <pre>{JSON.stringify(responseCounter)}</pre>
-    <button onClick={reset}>Reset</button>
-  </div>
-)
+class ResponseCounter extends Component {
+  constructor(props) {
+    super(props)
+  }
+
+  getChartDataFromProps(props) {
+    const success = props.responseCounter.successCount
+    const failure = props.responseCounter.totalCount - success
+    return [success, failure]
+  }
+
+  componentDidMount() {
+    const ctx = 'responsePieChart'
+
+    this.chart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Success', 'Failure'],
+        datasets: [
+          {
+            data: this.getChartDataFromProps(this.props),
+            backgroundColor: ['#008000', '#FF0000']
+          }
+        ]
+      }
+    })
+  }
+
+  componentDidUpdate() {
+    this.chart.data.datasets[0].data = this.getChartDataFromProps(this.props)
+    this.chart.update()
+  }
+
+  render() {
+    return (
+      <div>
+        {/* <pre>{JSON.stringify(this.props.responseCounter)}</pre> */}
+        <canvas id="responsePieChart" width="400" height="400" />
+        <button onClick={this.props.reset}>Reset</button>
+      </div>
+    )
+  }
+}
 
 const mapStateToProps = state => ({
   responseCounter: state.responseCounter
