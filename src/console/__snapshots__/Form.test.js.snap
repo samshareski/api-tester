@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Form /> matches snapshot 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <select
+    name="method"
+    onChange={[Function]}
+    value="GET"
+  >
+    <option
+      value="GET"
+    >
+      GET
+    </option>
+    <option
+      value="POST"
+    >
+      POST
+    </option>
+    <option
+      value="PUT"
+    >
+      PUT
+    </option>
+    <option
+      value="DELETE"
+    >
+      DELETE
+    </option>
+  </select>
+  <input
+    name="url"
+    onChange={[Function]}
+    placeholder="http://example.com/api"
+    type="text"
+    value=""
+  />
+  <input
+    type="submit"
+    value="TEST"
+  />
+</form>
+`;
