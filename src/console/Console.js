@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Form from './Form'
 import Display from './Display'
 import makeApiRequest from './api-tester'
+import HistoryListContainer from './containers/HistoryListContainer'
 
 class Console extends Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class Console extends Component {
       <div>
         <Display response={this.state.response} />
         <Form submitFormData={this.testApi} />
+        <HistoryListContainer/>
       </div>
     )
   }
