@@ -4,3 +4,9 @@ export const addResponse = response => {
     response
   }
 }
+
+export const resetSuccessRate = () => {
+  return {
+    type: 'RESET_SUCCESS_RATE'
+  }
+}

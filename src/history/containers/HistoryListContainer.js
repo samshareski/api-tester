@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import HistoryList from '../HistoryList'
 
 const mapStateToProps = (state, ownProps) => ({
-  historyList: state
+  historyList: state.historyList
 })
 
 const HistoryListContainer = connect(mapStateToProps)(HistoryList)
