@@ -10,17 +10,17 @@ class History extends Component {
         }
     }
 
-    viewResponse = id => {
+    viewResponse = () => {
         this.setState({
-            body: JSON.stringify(this.props.historyList[id].response.body),
-            response: JSON.stringify(this.props.historyList[id].response.response)
+            body: JSON.stringify(this.props.response.body),
+            response: JSON.stringify(this.props.response)
         })
     }
 
     render() {
         return (
             <li
-                onClick={() => this.viewResponse(this.props.id)}>
+                onClick={() => this.viewResponse()}>
                 {this.props.method}
                 {this.props.url}
                 {this.state.body}
