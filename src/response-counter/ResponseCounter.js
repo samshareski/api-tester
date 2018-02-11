@@ -15,7 +15,7 @@ class ResponseCounter extends Component {
   }
 
   componentDidMount() {
-    const ctx = 'responsePieChart'
+    const ctx = this.canvas
 
     this.chart = new Chart(ctx, {
       type: 'pie',
@@ -39,7 +39,7 @@ class ResponseCounter extends Component {
   render() {
     return (
       <div>
-        <canvas id="responsePieChart" />
+        <canvas ref={canvas => (this.canvas = canvas)} />
         <button onClick={this.props.reset}>Reset</button>
       </div>
     )
