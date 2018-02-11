@@ -39,7 +39,7 @@ class ResponseCounter extends Component {
   render() {
     return (
       <div>
-        <canvas id="responsePieChart" width="400" height="400" />
+        <canvas id="responsePieChart" />
         <button onClick={this.props.reset}>Reset</button>
       </div>
     )
