@@ -1,23 +1,30 @@
-#root > div:nth-child(1), h1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  margin: 0 20px;
 }
-p {
+
+.one {
+  grid-column: 1 / 1;
+  grid-row: 1;
+}
+.two {
+  grid-column: 2 / 2;
+  grid-row: 1;
+}
+.three {
+  grid-column: 3 / 3;
+  grid-row: 1;
+}
+
+h1 {
+  padding-left: 20px;
+}
+
+span, p {
   font-weight: bold;
-}
-
-#root > div:nth-child(1) > div:nth-child(2) {
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-#root > div:nth-child(1) > div:nth-child(2) > div > p {
-  display: block;
 }
 
 pre {
@@ -299,8 +306,4 @@ ul {
 li {
   width: 100%;
   list-style: none;
-}
-
-#root > div:nth-child(1) > div:nth-child(3) {
-  margin-top: 20px;
 }

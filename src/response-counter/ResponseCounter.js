@@ -34,7 +34,7 @@ class ResponseCounter extends Component {
 
   render() {
     return (
-      <div>
+      <div className="three">
         <canvas ref={canvas => (this.canvas = canvas)} />
         <button onClick={this.props.reset}>Reset</button>
       </div>

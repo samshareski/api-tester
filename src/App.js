@@ -8,9 +8,11 @@ class App extends Component {
     return (
       <div>
         <h1>React API Tester</h1>
-        <Console />
-        <ResponseCounter />
-        <HistoryListContainer />
+        <div className="wrapper">
+          <Console />
+          <ResponseCounter />
+          <HistoryListContainer />
+        </div>
       </div>
     )
   }
