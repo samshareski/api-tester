@@ -9,8 +9,8 @@ class App extends Component {
       <div>
         <h1>React API Tester</h1>
         <Console />
-        <HistoryListContainer />
         <ResponseCounter />
+        <HistoryListContainer />
       </div>
     )
   }
