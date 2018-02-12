@@ -4,10 +4,6 @@ import Chart from 'chart.js'
 import { resetSuccessRate } from '../store/actions'
 
 class ResponseCounter extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   getChartDataFromProps(props) {
     const success = props.responseCounter.successCount
     const failure = props.responseCounter.totalCount - success
