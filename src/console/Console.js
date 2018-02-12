@@ -19,7 +19,7 @@ class Console extends Component {
 
   render() {
     return (
-      <div>
+      <div className="one">
         <Display response={this.state.response} />
         <Form submitFormData={this.testApi} />
       </div>
