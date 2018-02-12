@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Console from './console/Console'
 import HistoryListContainer from './history/containers/HistoryListContainer'
+import ResponseCounter from './response-counter/ResponseCounter'
 
 class App extends Component {
   render() {
@@ -9,6 +10,7 @@ class App extends Component {
         <h1>React API Tester</h1>
         <Console />
         <HistoryListContainer />
+        <ResponseCounter />
       </div>
     )
   }

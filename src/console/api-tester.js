@@ -25,7 +25,8 @@ const makeApiRequest = async formData => {
       url: formData.url,
       method: formData.method,
       body: formData.body,
-      response: jsonString
+      response: jsonString,
+      ok: response.ok
     })
   )
 

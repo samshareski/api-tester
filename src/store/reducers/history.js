@@ -1,5 +1,3 @@
-import { combineReducers } from 'redux'
-
 const historyList = (state = [], action) => {
   switch (action.type) {
     case 'ADD_RESPONSE':
@@ -13,9 +11,5 @@ const historyList = (state = [], action) => {
       return state
   }
 }
-
-export const reducers = combineReducers({
-  historyList
-})
 
 export default historyList
